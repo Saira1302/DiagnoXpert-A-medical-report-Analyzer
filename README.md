@@ -1,23 +1,167 @@
-# FYP
-## Project Title
-DiagnoXpert
+<div align="center">
 
-**Version:** 1.0
+# 🩺 DiagnoXpert
+
+### AI-Powered Medical Report Analyzer
+
+Turn complex lab reports into clear, actionable insights.
+
+[![Next.js](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 20 13 AM" src="https://github.com/user-attachments/assets/c38401b9-821c-4952-a721-19a885a67e34" />
+)
+[![TypeScript](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 21 55 AM" src="https://github.com/user-attachments/assets/78e42b13-f2d6-475e-9974-c889dc58dbaa" />
+)
+[![MongoDB](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 21 03 AM" src="https://github.com/user-attachments/assets/0b156375-fd24-4e4f-8bdc-e84a02695a65" />
+)
+[![TailwindCSS](<img width="1527" height="797" alt="Screenshot 2026-04-28 080435" src="https://github.com/user-attachments/assets/850f164b-f30c-4862-b5ac-c2d130f6f495" />
+)
+
+
+
+
+</div>
 
 ---
 
-## Abstract
+## 📖 About The Project
 
-DiagnoXpert is an innovative platform that harnesses AI to revolutionize healthcare by accurately analyzing medical documents and offering intelligent, clear diagnostic insights. Utilizing advanced natural language processing (NLP) and optical character recognition (OCR), the platform pulls key data from multiple reports (such as blood tests) and provides clear interpretations, possible diagnoses and customization of health trends analysis. DiagnoXpert with its specially-created chatbot for smooth query resolution and voice-input support to make it more user friendly, ensures that patients are able to confidently engage in complex medical conversations. By using technology to increase access, understanding, and personalization, DiagnoXpert sets a new standard for modern, patient-focused healthcare system.
+**DiagnoXpert** is a full-stack web application that helps patients understand their medical lab reports without needing a medical degree. Users upload a report (PDF or image), and the platform extracts the data via OCR, interprets the results in plain language, and connects users with the right specialist doctors for follow-up all through a clean, real-time chat-driven interface.
+
+It was built as a Final Year Project (FYP), with a strong focus on production quality architecture: type-safe APIs, real-time communication, secure authentication, and a modular, scalable codebase.
+
+> 🔗 **Live Website:** [Add your deployed link here](#)
 
 ---
 
-## How to Clone (SSH)
+## ✨ Key Features
 
-To clone this repository using SSH, run the following command in your terminal:
+- 🔍 **OCR-Powered Report Scanning** — Upload lab reports as PDF or image and extract structured data automatically
+- 🤖 **AI-Assisted Interpretation** — Get plain-language explanations of medical results
+- 💬 **Real-Time Chat** — Live messaging between patients and doctors with instant notifications
+- 👨‍⚕️ **Doctor Directory** — Browse specialists by category (dentist, eye specialist, gastroenterologist, psychiatrist, orthopedic surgeon, and more)
+- 🔐 **Secure Authentication** — Email/password and Google OAuth sign-in via NextAuth
+- 📁 **Report History** — Revisit past scans and chat history anytime
+- 🔔 **Notifications** — Stay updated on new messages and events in real time
+- 🌗 **Light/Dark Theme** — Fully responsive, accessible UI with theme toggling
+- ✉️ **Email Workflows** — Automated password reset and account emails
 
-```sh
-git clone git@github.com:EmanDeveloper/FYP.git
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js (App Router) + TypeScript |
+| **Styling / UI** | Tailwind CSS, shadcn/ui, Radix Primitives |
+| **State Management** | Redux Toolkit |
+| **Database** | MongoDB + Mongoose |
+| **Authentication** | NextAuth.js (Credentials + Google OAuth) |
+| **File Storage** | Cloudinary |
+| **OCR / Report Parsing** | PDF.js, Python OCR service |
+| **Email** | Nodemailer |
+| **Testing** | Vitest / unit test suite |
+
+---
+
+## 📂 Project Structure
+
+```
+diagno_xpert/
+├── src/
+│   ├── app/              # Next.js App Router pages & API routes
+│   ├── components/       # Reusable UI & feature components
+│   ├── features/         # Redux slices (auth, home, chat history)
+│   ├── ApiServices/       # Client-side API service layer
+│   ├── models/            # Mongoose schemas
+│   ├── lib/                # Core utilities (DB connect, OCR, validation)
+│   ├── helper/             # Email templates, Cloudinary setup, chat export
+│   ├── hooks/               # Custom React hooks
+│   └── types/                # Shared TypeScript types
+├── public/                    # Static assets & icons
+├── tests/                      # Unit tests
+└── ...config files
 ```
 
-Make sure you have added your SSH key to your GitHub account before cloning.
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- A MongoDB instance (local or Atlas)
+- Cloudinary account (for image/file uploads)
+- Google Cloud OAuth credentials (for Google sign-in)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Saira1302/DiagnoXpert-A-medical-report-Analyzer.git
+
+# Move into the project directory
+cd DiagnoXpert-A-medical-report-Analyzer/diagno_xpert
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# then fill in your own values in .env
+
+# Run the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app running.
+
+### Environment Variables
+
+This project requires a `.env` file with your own credentials. See `.env.example` for the full list of required variables, which typically include:
+
+```
+MONGODB_URI=
+NEXTAUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+EMAIL_USER=
+EMAIL_PASS=
+```
+
+> ⚠️ Never commit your `.env` file — it's already excluded via `.gitignore`.
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm run test
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Multi-language report support
+- [ ] Downloadable AI-generated health summaries
+- [ ] Appointment scheduling with doctors
+- [ ] Mobile app version
+
+---
+
+
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+
+Built with ❤️ as a Final Year Project
+
+</div>
