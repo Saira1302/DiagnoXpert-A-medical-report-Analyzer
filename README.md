@@ -6,14 +6,11 @@
 
 Turn complex lab reports into clear, actionable insights.
 
-[![Next.js](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 20 13 AM" src="https://github.com/user-attachments/assets/c38401b9-821c-4952-a721-19a885a67e34" />
-)
-[![TypeScript](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 21 55 AM" src="https://github.com/user-attachments/assets/78e42b13-f2d6-475e-9974-c889dc58dbaa" />
-)
-[![MongoDB](<img width="1600" height="764" alt="WhatsApp Image 2026-06-18 at 7 21 03 AM" src="https://github.com/user-attachments/assets/0b156375-fd24-4e4f-8bdc-e84a02695a65" />
-)
-[![TailwindCSS](<img width="1527" height="797" alt="Screenshot 2026-04-28 080435" src="https://github.com/user-attachments/assets/850f164b-f30c-4862-b5ac-c2d130f6f495" />
-)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Redux](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
 
 
 
@@ -28,21 +25,21 @@ Turn complex lab reports into clear, actionable insights.
 
 It was built as a Final Year Project (FYP), with a strong focus on production quality architecture: type-safe APIs, real-time communication, secure authentication, and a modular, scalable codebase.
 
-> 🔗 **Live Website:** [Add your deployed link here](#)
+> 🔗 **Live Website:** [https://diagno-xpert.vercel.app/](#)
 
 ---
 
 ## ✨ Key Features
 
-- 🔍 **OCR-Powered Report Scanning** — Upload lab reports as PDF or image and extract structured data automatically
-- 🤖 **AI-Assisted Interpretation** — Get plain-language explanations of medical results
-- 💬 **Real-Time Chat** — Live messaging between patients and doctors with instant notifications
-- 👨‍⚕️ **Doctor Directory** — Browse specialists by category (dentist, eye specialist, gastroenterologist, psychiatrist, orthopedic surgeon, and more)
-- 🔐 **Secure Authentication** — Email/password and Google OAuth sign-in via NextAuth
-- 📁 **Report History** — Revisit past scans and chat history anytime
-- 🔔 **Notifications** — Stay updated on new messages and events in real time
-- 🌗 **Light/Dark Theme** — Fully responsive, accessible UI with theme toggling
-- ✉️ **Email Workflows** — Automated password reset and account emails
+- 🔍 **OCR-Powered Report Scanning**: Upload lab reports as PDF or image and extract structured data automatically
+- 🤖 **AI-Assisted Interpretation**: Get plain-language explanations of medical results
+- 💬 **Real-Time Chat**: Live messaging between patients and doctors with instant notifications
+- 👨‍⚕️ **Doctor Directory**: Browse specialists by category (dentist, eye specialist, gastroenterologist, psychiatrist, orthopedic surgeon, and more)
+- 🔐 **Secure Authentication**: Email/password and Google OAuth sign-in via NextAuth
+- 📁 **Report History**: Revisit past scans and chat history anytime
+- 🔔 **Notifications**: Stay updated on new messages and events in real time
+- 🌗 **Light/Dark Theme**: Fully responsive, accessible UI with theme toggling
+- ✉️ **Email Workflows**: Automated password reset and account emails
 
 ---
 
@@ -150,13 +147,6 @@ npm run test
 - [ ] Appointment scheduling with doctors
 - [ ] Mobile app version
 
----
-
-
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
