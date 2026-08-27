@@ -27,6 +27,9 @@ It was built as a Final Year Project (FYP), with a strong focus on production qu
 
 > 🔗 **Live Website:** [https://diagno-xpert.vercel.app/](#)
 
+
+>  🔗 **Technical Report** [https://doi.org/10.5281/zenodo.22125705](#)
+
 ---
 
 ## ✨ Key Features
