@@ -1,0 +1,99 @@
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.pagesizes import A4
+from reportlab.lib import colors
+
+# Local image paths (uploaded ones + placeholders for the two missing images I’ll add via URLs)
+nvidia_a100_path = "/mnt/data/NVIDIA DGX A100 - Inside View.jpg"
+nasa_gpc_path = "/mnt/data/Space_Shuttle_upgraded_GPC.jpg"
+nvidia_gpu_path = "/mnt/data/nvidia-a100-hgx-3qtr-front-left-2c50-p@2x.jpg"
+intel_i9_url = "https://upload.wikimedia.org/wikipedia/commons/2/23/Intel_Core_i9_logo.svg"
+frontier_url = "https://upload.wikimedia.org/wikipedia/commons/1/1c/Frontier_supercomputer_ORNL.jpg"
+
+# Create PDF
+pdf_path = "/mnt/data/Flynns_Taxonomy_Supercomputers_Assignment.pdf"
+doc = SimpleDocTemplate(pdf_path, pagesize=A4)
+styles = getSampleStyleSheet()
+story = []
+
+# Title
+story.append(Paragraph("<b>Flynn’s Taxonomy and Real-World Computer Examples</b>", styles["Title"]))
+story.append(Spacer(1, 12))
+
+# 1) SISD
+story.append(Paragraph("<b>1) SISD — Single Instruction, Single Data</b>", styles["Heading2"]))
+story.append(Image(intel_i9_url, width=150, height=80))
+story.append(Paragraph("""
+<b>Example:</b> Intel Core i9-13900K<br/>
+<b>Brand:</b> Intel<br/>
+<b>Specs:</b> 24 cores (8P+16E), up to 5.8GHz, 36MB cache<br/>
+<b>Use Case:</b> Desktop computing, single-threaded tasks<br/>
+<b>Cost:</b> ~$450–700<br/>
+<b>Location:</b> Global availability<br/>
+<b>Sharing Model:</b> Pure shared<br/>
+""", styles["Normal"]))
+story.append(Spacer(1, 12))
+
+# 2) SIMD
+story.append(Paragraph("<b>2) SIMD — Single Instruction, Multiple Data</b>", styles["Heading2"]))
+story.append(Image(nvidia_a100_path, width=200, height=120))
+story.append(Paragraph("""
+<b>Example:</b> NVIDIA DGX A100 / A100 GPU<br/>
+<b>Brand:</b> NVIDIA<br/>
+<b>Specs:</b> 8×A100 GPUs, dual AMD CPUs, ~5 PFLOPS AI<br/>
+<b>Use Case:</b> AI training, HPC, image processing<br/>
+<b>Cost:</b> ~$199,000<br/>
+<b>Location:</b> Santa Clara, USA<br/>
+<b>Sharing Model:</b> Virtually shared<br/>
+""", styles["Normal"]))
+story.append(Spacer(1, 12))
+
+# 3) MISD
+story.append(Paragraph("<b>3) MISD — Multiple Instruction, Single Data</b>", styles["Heading2"]))
+story.append(Image(nasa_gpc_path, width=200, height=120))
+story.append(Paragraph("""
+<b>Example:</b> NASA Space Shuttle General Purpose Computers (IBM AP-101)<br/>
+<b>Brand:</b> IBM (for NASA)<br/>
+<b>Specs:</b> 5 redundant GPCs with voting logic for fault tolerance<br/>
+<b>Use Case:</b> Real-time flight control with fault tolerance<br/>
+<b>Cost:</b> Integrated into Shuttle program<br/>
+<b>Location:</b> NASA, USA<br/>
+<b>Sharing Model:</b> Redundant MISD (fault-tolerant)<br/>
+""", styles["Normal"]))
+story.append(Spacer(1, 12))
+
+# 4) MIMD
+story.append(Paragraph("<b>4) MIMD — Multiple Instruction, Multiple Data</b>", styles["Heading2"]))
+story.append(Image(frontier_url, width=200, height=120))
+story.append(Paragraph("""
+<b>Example:</b> Frontier Supercomputer<br/>
+<b>Brand:</b> HPE/Cray + AMD<br/>
+<b>Specs:</b> 9,472 nodes, AMD EPYC CPUs, Instinct GPUs, 1.1 ExaFLOPS<br/>
+<b>Use Case:</b> Climate modeling, AI, physics simulations<br/>
+<b>Cost:</b> ~$600 million<br/>
+<b>Location:</b> Oak Ridge National Laboratory, USA<br/>
+<b>Sharing Model:</b> Distributed MIMD<br/>
+""", styles["Normal"]))
+story.append(Spacer(1, 12))
+
+# Comparison table
+story.append(Paragraph("<b>Comparison Table</b>", styles["Heading2"]))
+data = [
+    ["Type", "Example", "Sharing Model"],
+    ["SISD", "Intel Core i9-13900K", "Pure Shared"],
+    ["SIMD", "NVIDIA DGX A100", "Virtually Shared"],
+    ["MISD", "NASA GPC (Shuttle)", "Redundant / Fault-tolerant"],
+    ["MIMD", "Frontier (ORNL)", "Distributed"],
+]
+table = Table(data, colWidths=[100, 200, 150])
+table.setStyle(TableStyle([
+    ("BACKGROUND", (0, 0), (-1, 0), colors.gray),
+    ("TEXTCOLOR", (0, 0), (-1, 0), colors.whitesmoke),
+    ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+    ("GRID", (0, 0), (-1, -1), 0.5, colors.black),
+]))
+story.append(table)
+
+# Build PDF
+doc.build(story)
+pdf_path
